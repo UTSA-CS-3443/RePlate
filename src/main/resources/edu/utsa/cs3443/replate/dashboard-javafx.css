@@ -1,0 +1,362 @@
+/*
+ * RePlate Dashboard — JavaFX stylesheet
+ *
+ * Converted from the supplied design-tool CSS export.
+ * Apply these classes from FXML with styleClass="class-name".
+ *
+ * Layout properties such as display:flex, flex-direction, gap, order,
+ * flex-grow, and align-self belong in JavaFX layout containers (HBox,
+ * VBox, BorderPane, GridPane, etc.), not in this stylesheet.
+ *
+ * Fonts: "Inter" and "Lora" should be installed or included as project assets.
+ * The fresh-ingredients photo from the original export must be supplied as
+ * an image asset and referenced from FXML or Java code.
+ */
+
+/* ---------- Application palette and defaults ---------- */
+
+.root {
+    -fx-background-color: #F4F1E8;
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-text-fill: #20251F;
+}
+
+.label {
+    -fx-text-fill: #20251F;
+}
+
+.button {
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+/* ---------- Main layout ---------- */
+
+/* Apply to the sidebar container, typically a VBox. */
+.sidebar {
+    -fx-background-color: #1D2A1F;
+    -fx-padding: 20px 10px 10px 10px;
+}
+
+/* Apply to the main content container, typically a VBox inside a BorderPane. */
+.main-content {
+    -fx-background-color: #F4F1E8;
+    -fx-padding: 10px 20px 10px 20px;
+}
+
+/* ---------- Brand ---------- */
+
+.brand {
+    -fx-padding: 0 8px 0 8px;
+}
+
+.brand-mark {
+    -fx-background-color: #C9E37C;
+    -fx-background-radius: 11px;
+    -fx-min-width: 34px;
+    -fx-pref-width: 34px;
+    -fx-max-width: 34px;
+    -fx-min-height: 34px;
+    -fx-pref-height: 34px;
+    -fx-max-height: 34px;
+    -fx-alignment: center;
+}
+
+.brand-name {
+    -fx-font-family: "Lora";
+    -fx-font-size: 25px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ---------- Sidebar navigation ---------- */
+
+.primary-navigation {
+    -fx-spacing: 7px;
+}
+
+.navigation-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 12px;
+    -fx-padding: 0 13px 0 13px;
+    -fx-alignment: center-left;
+    -fx-min-height: 44px;
+    -fx-pref-height: 44px;
+    -fx-text-fill: #AAB7A5;
+}
+
+.navigation-item:hover {
+    -fx-background-color: #27392A;
+}
+
+.navigation-item-active {
+    -fx-background-color: #2F6B45;
+    -fx-background-radius: 12px;
+    -fx-padding: 0 13px 0 13px;
+    -fx-alignment: center-left;
+    -fx-min-height: 44px;
+    -fx-pref-height: 44px;
+    -fx-text-fill: #FFFFFF;
+}
+
+.navigation-item-active:hover {
+    -fx-background-color: #36784F;
+}
+
+.navigation-label {
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #AAB7A5;
+}
+
+.navigation-label-active {
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ---------- Page header ---------- */
+
+.page-header {
+    -fx-padding: 0;
+}
+
+.eyebrow {
+    -fx-font-family: "Inter";
+    -fx-font-size: 11px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #2F6B45;
+    -fx-letter-spacing: 1.2px;
+}
+
+.page-title {
+    -fx-font-family: "Lora";
+    -fx-font-size: 44px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #20251F;
+}
+
+.page-description {
+    -fx-font-family: "Inter";
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6B7168;
+}
+
+/* ---------- Buttons ---------- */
+
+.primary-button {
+    -fx-background-color: #2F6B45;
+    -fx-border-color: #2F6B45;
+    -fx-border-width: 1px;
+    -fx-background-radius: 999px;
+    -fx-border-radius: 999px;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 0 18px 0 18px;
+    -fx-min-height: 44px;
+    -fx-pref-height: 44px;
+}
+
+.primary-button:hover {
+    -fx-background-color: #245738;
+    -fx-border-color: #245738;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #1D2A1F;
+}
+
+.secondary-button {
+    -fx-background-color: #FFFEFA;
+    -fx-border-color: #D8D5C9;
+    -fx-border-width: 1px;
+    -fx-background-radius: 999px;
+    -fx-border-radius: 999px;
+    -fx-text-fill: #20251F;
+    -fx-padding: 0 18px 0 18px;
+    -fx-min-height: 44px;
+    -fx-pref-height: 44px;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #F4F1E8;
+}
+
+/* ---------- Priority feature panel ---------- */
+
+.priority-feature {
+    -fx-background-color: #234F35;
+    -fx-background-radius: 24px;
+    -fx-padding: 0px;
+}
+
+.priority-copy {
+    -fx-background-color: transparent;
+    -fx-padding: 30px;
+}
+
+.priority-title {
+    -fx-font-family: "Lora";
+    -fx-font-size: 40px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: transparent;
+}
+
+/* Place the image in an ImageView in FXML; this class is for its container. */
+.fresh-ingredients-image {
+    -fx-background-color: #1D2A1F;
+    -fx-background-radius: 15px;
+}
+
+/* ---------- Metric cards ---------- */
+
+.metric-card {
+    -fx-background-color: #FFFEFA;
+    -fx-border-color: #D8D5C9;
+    -fx-border-width: 1px;
+    -fx-background-radius: 18px;
+    -fx-border-radius: 18px;
+    -fx-effect: dropshadow(gaussian, rgba(29, 42, 31, 0.07), 24, 0.0, 0, 8);
+    -fx-padding: 10px;
+}
+
+.metric-heading {
+    -fx-padding: 0;
+}
+
+.metric-label {
+    -fx-font-family: "Inter";
+    -fx-font-size: 12px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6B7168;
+}
+
+.metric-value {
+    -fx-font-family: "Lora";
+    -fx-font-size: 31px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #20251F;
+}
+
+.metric-icon {
+    -fx-background-color: #DDEBDD;
+    -fx-background-radius: 999px;
+    -fx-min-width: 30px;
+    -fx-pref-width: 30px;
+    -fx-max-width: 30px;
+    -fx-min-height: 30px;
+    -fx-pref-height: 30px;
+    -fx-max-height: 30px;
+    -fx-alignment: center;
+}
+
+/* ---------- Detail / expiring-soon card ---------- */
+
+.section-card {
+    -fx-background-color: #FFFEFA;
+    -fx-border-color: #D8D5C9;
+    -fx-border-width: 1px;
+    -fx-background-radius: 18px;
+    -fx-border-radius: 18px;
+    -fx-effect: dropshadow(gaussian, rgba(29, 42, 31, 0.07), 24, 0.0, 0, 8);
+    -fx-padding: 20px;
+}
+
+.section-title {
+    -fx-font-family: "Lora";
+    -fx-font-size: 21px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #20251F;
+}
+
+.section-subtitle {
+    -fx-font-family: "Inter";
+    -fx-font-size: 11px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6B7168;
+}
+
+.text-link {
+    -fx-font-family: "Inter";
+    -fx-font-size: 11px;
+    -fx-text-fill: #2F6B45;
+    -fx-underline: false;
+}
+
+.text-link:hover {
+    -fx-underline: true;
+}
+
+.section-divider {
+    -fx-background-color: #D8D5C9;
+    -fx-min-height: 1px;
+    -fx-pref-height: 1px;
+    -fx-max-height: 1px;
+}
+
+/* ---------- Food / inventory rows ---------- */
+
+.food-row {
+    -fx-padding: 0;
+}
+
+.food-icon {
+    -fx-background-color: #E9E6DA;
+    -fx-background-radius: 9px;
+    -fx-min-width: 30px;
+    -fx-pref-width: 30px;
+    -fx-max-width: 30px;
+    -fx-min-height: 30px;
+    -fx-pref-height: 30px;
+    -fx-max-height: 30px;
+    -fx-alignment: center;
+}
+
+.food-name {
+    -fx-font-family: "Inter";
+    -fx-font-size: 12px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #20251F;
+}
+
+.food-quantity {
+    -fx-font-family: "Inter";
+    -fx-font-size: 10px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6B7168;
+}
+
+/* ---------- Status badges ---------- */
+
+.status-badge {
+    -fx-background-radius: 999px;
+    -fx-padding: 5px 10px 5px 10px;
+    -fx-alignment: center;
+}
+
+.status-badge-expiring {
+    -fx-background-color: #F4DDD8;
+}
+
+.status-badge-low {
+    -fx-background-color: #F5E3D8;
+}
+
+.status-label {
+    -fx-font-family: "Inter";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.status-label-expiring {
+    -fx-text-fill: #A94836;
+}
+
+.status-label-low {
+    -fx-text-fill: #B9683F;
+}
