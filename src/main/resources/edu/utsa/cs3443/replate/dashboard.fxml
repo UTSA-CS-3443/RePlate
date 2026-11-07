@@ -35,11 +35,13 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
@@ -91,13 +93,13 @@
       </VBox>
       <VBox fx:id="main_vbox" prefHeight="200.0" prefWidth="100.0" spacing="10.0" styleClass="main-content" HBox.hgrow="ALWAYS">
          <children>
-            <Label fx:id="label_date" text="DATE" />
             <HBox alignment="BOTTOM_RIGHT" prefHeight="0.0">
                <children>
                   <VBox alignment="BOTTOM_LEFT" maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                      <children>
-                        <Label fx:id="label_greeting" text="GREETING" />
-                        <Label fx:id="label_blurb" text="BLURB" />
+                        <Label fx:id="label_header_super" styleClass="eyebrow" text="DATE" />
+                        <Label fx:id="label_header_main" styleClass="page-title" text="Hello" />
+                        <Label fx:id="label_header_sub" styleClass="page-description" text="Description" />
                      </children>
                   </VBox>
                   <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Add Food">
@@ -108,6 +110,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="Dubai Medium" size="12.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
@@ -161,15 +166,27 @@
                   </HBox>
                </children>
             </HBox>
-            <VBox fx:id="dashboard_details" styleClass="metric-card" VBox.vgrow="ALWAYS">
+            <VBox fx:id="dashboard_detail" styleClass="metric-card" VBox.vgrow="ALWAYS">
                <children>
                   <HBox spacing="10.0">
                      <children>
-                        <Label fx:id="label_dash_detail" text="Label" />
-                        <Label fx:id="label_dash_detail_info" text="Label" />
+                        <Label fx:id="label_dash_detail_header" text="Label" />
+                        <Label fx:id="label_dash_detail_sub" text="Label" />
                      </children>
                   </HBox>
-                  <VBox />
+                  <Separator prefWidth="200.0" />
+                  <VBox>
+                     <children>
+                        <HBox prefHeight="20.0" spacing="5.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label text="Label" />
+                              <Label text="Label" />
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Label fx:id="dash_detail_item_badge" styleClass="status-badge" text="Label" />
+                           </children>
+                        </HBox>
+                     </children></VBox>
                </children></VBox>
          </children>
          <HBox.margin>

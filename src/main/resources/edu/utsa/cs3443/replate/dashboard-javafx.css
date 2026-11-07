@@ -78,6 +78,7 @@
 }
 
 .navigation-item {
+    -fx-font-family: "Franklin Gothic Book";
     -fx-background-color: transparent;
     -fx-background-radius: 12px;
     -fx-padding: 0 13px 0 13px;
@@ -126,23 +127,22 @@
 }
 
 .eyebrow {
-    -fx-font-family: "Inter";
-    -fx-font-size: 11px;
+    -fx-font-family: "Century Gothic";
+    -fx-font-size: 9px;
     -fx-font-weight: normal;
     -fx-text-fill: #2F6B45;
-    -fx-letter-spacing: 1.2px;
 }
 
 .page-title {
-    -fx-font-family: "Lora";
+    -fx-font-family: "Baskerville Old Face";
     -fx-font-size: 44px;
     -fx-font-weight: normal;
     -fx-text-fill: #20251F;
 }
 
 .page-description {
-    -fx-font-family: "Inter";
-    -fx-font-size: 14px;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 11px;
     -fx-font-weight: normal;
     -fx-text-fill: #6B7168;
 }
@@ -150,15 +150,16 @@
 /* ---------- Buttons ---------- */
 
 .primary-button {
+    -fx-font-family: "Franklin Gothic Book";
     -fx-background-color: #2F6B45;
     -fx-border-color: #2F6B45;
     -fx-border-width: 1px;
     -fx-background-radius: 999px;
     -fx-border-radius: 999px;
     -fx-text-fill: #FFFFFF;
-    -fx-padding: 0 15px 0 15px;
-    -fx-min-height: 40px;
-    -fx-pref-height: 40px;
+    -fx-padding: 0 10px 0 10px;
+    -fx-min-height: 30px;
+    -fx-pref-height: 30px;
 }
 
 .primary-button:hover {
@@ -171,6 +172,7 @@
 }
 
 .secondary-button {
+    -fx-font-family: "Franklin Gothic Book";
     -fx-background-color: #FFFEFA;
     -fx-border-color: #D8D5C9;
     -fx-border-width: 1px;
@@ -184,6 +186,10 @@
 
 .secondary-button:hover {
     -fx-background-color: #F4F1E8;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: #d4cfc3;
 }
 
 /* ---------- Priority feature panel ---------- */
@@ -332,15 +338,21 @@
 }
 
 /* ---------- Status badges ---------- */
-
+/*FIX BADGES*/
 .status-badge {
-    -fx-background-radius: 999px;
-    -fx-padding: 5px 10px 5px 10px;
+    -fx-background-radius: 15px;
+    -fx-padding: 3px 10px 3px 10px;
     -fx-alignment: center;
+    -fx-background-color: #F4DDD8;
+    -fx-text-fill: #A94836;
+    -fx-font-family: "Inter";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
 }
 
 .status-badge-expiring {
     -fx-background-color: #F4DDD8;
+    -fx-background-radius: 10px;
 }
 
 .status-badge-low {
@@ -359,4 +371,161 @@
 
 .status-label-low {
     -fx-text-fill: #B9683F;
+}
+
+/*----------Searchbar-----------*/
+.search-bar {
+    -fx-background-radius: 10px;
+}
+
+/* ==========================================
+   Select Box (ComboBox Container)
+   ========================================== */
+.combo-box {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-background-color: #FFFEFA;
+    -fx-background-radius: 12px;
+    -fx-border-color: #D8D5C9;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-padding: 0 5px;
+}
+
+/* Focused State (Optional enhancement for border/glow) */
+.combo-box:focused {
+    -fx-border-color: #6B7168;
+}
+
+/* ==========================================
+   Value Text / Label Style
+   ========================================== */
+.combo-box .list-cell {
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #20251F;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* Selected item text inside the drop-down list */
+.combo-box-popup .list-view .list-cell {
+    -fx-font-family: 'Inter';
+    -fx-font-size: 14px;
+    -fx-text-fill: #20251F;
+    -fx-background-color: #FFFEFA;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #F0EEE5;
+}
+
+/* ==========================================
+   Chevron / Arrow Icon Style
+   ========================================== */
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 5px;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #6B7168;
+}
+
+/* ==========================================
+   Base Category Filter (Common Styles)
+   ========================================== */
+.category-filter {
+    -fx-font-family: 'Inter';
+    -fx-font-size: 11px;
+    -fx-font-weight: normal;
+    -fx-background-radius: 999px;
+    -fx-border-radius: 999px;
+    -fx-border-width: 1px;
+    -fx-alignment: center;
+    /* Padding: top/bottom 8px, left/right 14px */
+    -fx-padding: 8px 14px;
+}
+
+/* ==========================================
+   State 1: Active Filter (Green)
+   ========================================== */
+.category-filter-active {
+    -fx-font-family: 'Inter';
+    -fx-font-size: 10px;
+    -fx-font-weight: normal;
+    -fx-background-color: #2F6B45;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 15px;
+    -fx-padding: 5px 10px;
+}
+
+/* ==========================================
+   State 2: Inactive Filter (Default)
+   ========================================== */
+.category-filter-inactive {
+    -fx-font-family: 'Inter';
+    -fx-font-size: 10px;
+    -fx-font-weight: normal;
+    -fx-background-color: #e0dfda;
+    -fx-text-fill: #6B7168;
+    -fx-background-radius: 15px;
+    -fx-padding: 5px 10px;
+}
+
+/* Pantry table */
+.inventory-table {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20px;
+    -fx-border-color: #DAD8CC;
+    -fx-border-radius: 20px;
+    -fx-border-width: 1px;
+}
+
+/* Table header */
+.table-header {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 9px;
+    -fx-background-color: #EAE9E0;
+    -fx-padding: 2px 20px;
+    -fx-background-radius: 20px 20px 0 0;
+}
+
+/* Individual food rows */
+.food-row {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 5px 20px 5px 20px;
+    -fx-min-height: 40px;
+    -fx-border-color: #FFFFFF00 #FFFFFF00 #DEDCD2 #FFFFFF00;
+    -fx-border-width: 0 0 1px 0;
+}
+
+/* Food name */
+.food-name {
+    -fx-font-size: 14px;
+    -fx-text-fill: #292D27;
+}
+
+/* Food category */
+.food-category {
+    -fx-font-size: 12px;
+    -fx-text-fill: #85877E;
+}
+
+/* Expiration badge */
+.expiration-badge {
+    -fx-background-color: #E0EBDD;
+    -fx-background-radius: 20px;
+    -fx-padding: 5px 12px;
+    -fx-text-fill: #36563D;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Action button */
+.more-options {
+    -fx-background-color: #FFFFFF00;
+    -fx-font-size: 9px;
+    -fx-text-fill: #77786F;
+    -fx-cursor: hand;
 }
