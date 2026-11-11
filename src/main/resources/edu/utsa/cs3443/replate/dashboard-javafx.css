@@ -195,7 +195,6 @@
 .delete-button {
     -fx-font-family: "Franklin Gothic Book";
     -fx-font-size: 14px;
-    -fx-font-weight: regular;
     -fx-text-fill: #FFFFFF;
     -fx-background-color: #A94836;
     -fx-background-radius: 999px;

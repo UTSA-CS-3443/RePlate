@@ -132,38 +132,9 @@
                   </ImageView>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox fx:id="dashboard_detail_header" alignment="BOTTOM_LEFT" fillHeight="false" spacing="10.0" styleClass="expired-table-title">
                <children>
-                  <HBox fx:id="dashboard_metric_1" prefHeight="100.0" prefWidth="275.0" styleClass="metric-card">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <Text fx:id="label_metric_1" strokeType="OUTSIDE" strokeWidth="0.0" text="METRIC LABEL" />
-                              <Text fx:id="label_metric_value_1" strokeType="OUTSIDE" strokeWidth="0.0" text="VALUE" />
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../images/open_box_icon.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox fx:id="dashboard_metric_2" prefHeight="100.0" prefWidth="275.0" styleClass="metric-card">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <Text fx:id="label_metric_2" strokeType="OUTSIDE" strokeWidth="0.0" text="METRIC LABEL" />
-                              <Text fx:id="label_metric_value_2" strokeType="OUTSIDE" strokeWidth="0.0" text="VALUE" />
-                           </children>
-                        </VBox>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../images/clock_icon.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
+                  <Text fx:id="label_metric_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantry Items #" />
                </children>
             </HBox>
             <VBox fx:id="dashboard_detail" styleClass="metric-card" VBox.vgrow="ALWAYS">
