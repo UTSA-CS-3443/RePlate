@@ -1,56 +1,62 @@
 package edu.utsa.cs3443.replate.model;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
 public class PantryManager {
     public ArrayList<Food> foods = new ArrayList<Food>();
-    private final String foodDataFileName = "data/foods.csv";
+    private final String foodDataFileName;
 
-    public void loadPantry() throws IOException {
+    private static PantryManager instance;
 
-        File file = new File(foodDataFileName);
+    private PantryManager() {
+        foods = new ArrayList<>();
+        foodDataFileName = "data/foods.csv";
+    }
 
-        if (!file.exists()) {
-            throw new IOException(
-                    "Food data file was not found.");
+    public static PantryManager getInstance() {
+        if (instance == null) {
+            instance = new PantryManager();
+            instance.loadPantry();
         }
+        return instance;
+    }
 
+    public void loadPantry() {
+
+        Scanner scnr = null;
         ArrayList<Food> loadedFood = new ArrayList<>();
 
-        try (Scanner scnr = new Scanner(file)) {
+        try {
+            String line;
+            Food food;
+            scnr = new Scanner(new File(foodDataFileName));
 
             // Skip the CSV header.
             if (scnr.hasNextLine()) {
                 scnr.nextLine();
             }
 
-            while (scnr.hasNextLine()) {
-
-                String line = scnr.nextLine().trim();
+            while(scnr.hasNextLine()) {
+                line = scnr.nextLine().trim();
 
                 if (line.isEmpty()) {
                     continue;
                 }
 
-                try {
-                    Food food =
-                            convertLineToFood(line, ",");
-
-                    if (food != null) {
-                        loadedFood.add(food);
-                    }
-
-                } catch (IllegalArgumentException e) {
-                    System.err.println(
-                            "Skipping invalid food record: "
-                                    + e.getMessage());
+                food = convertLineToFood(line, ",");
+                if (food != null) {
+                    loadedFood.add(food);
                 }
             }
+            scnr.close();
+
+        } catch (FileNotFoundException fnfEx) {
+            System.out.println("File not found: " + fnfEx.getMessage());
+
+        } catch (IOException e) {
+            System.out.println("Error reading food pantry file: " + e.getMessage());
         }
 
         foods.clear();
