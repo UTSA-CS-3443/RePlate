@@ -110,13 +110,12 @@
                         <VBox prefHeight="33.0" prefWidth="43.0" HBox.hgrow="ALWAYS">
                            <children>
                               <Label text="Name" />
-                              <TextField styleClass="search-bar" />
+                              <TextField fx:id="nameField" styleClass="search-bar" />
                            </children>
                         </VBox>
-                        <VBox prefHeight="52.0">
+                        <VBox alignment="CENTER" prefHeight="52.0">
                            <children>
-                              <Label text="Category" />
-                              <MenuButton fx:id="menuButton_sort" mnemonicParsing="false" styleClass="combo-box" text="MenuButton">
+                              <MenuButton fx:id="menubutton_category" mnemonicParsing="false" styleClass="combo-box" text="Category">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Action 1" />
                                     <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -130,14 +129,13 @@
                      <children>
                         <VBox prefHeight="33.0" prefWidth="43.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Quanity" />
-                              <TextField styleClass="search-bar" />
+                              <Label text="Quantityy" />
+                              <TextField fx:id="quantityField" styleClass="search-bar" />
                            </children>
                         </VBox>
-                        <VBox prefHeight="52.0">
+                        <VBox alignment="CENTER" prefHeight="52.0">
                            <children>
-                              <Label text="Unit" />
-                              <MenuButton fx:id="menuButton_sort1" mnemonicParsing="false" styleClass="combo-box" text="MenuButton">
+                              <MenuButton fx:id="menuButton_unit" mnemonicParsing="false" styleClass="combo-box" text="Unit">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Action 1" />
                                     <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -152,7 +150,7 @@
                         <VBox HBox.hgrow="ALWAYS">
                            <children>
                               <Label text="Expiration Date" />
-                              <DatePicker />
+                              <DatePicker fx:id="expiration_datepicker" />
                            </children>
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS" />
@@ -163,7 +161,7 @@
                         <VBox prefHeight="33.0" prefWidth="43.0" HBox.hgrow="ALWAYS">
                            <children>
                               <Label text="Notes" />
-                              <TextField styleClass="search-bar" />
+                              <TextField fx:id="notesField" styleClass="search-bar" />
                            </children>
                         </VBox>
                      </children>
