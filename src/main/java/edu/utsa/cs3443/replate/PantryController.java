@@ -1,6 +1,9 @@
 package edu.utsa.cs3443.replate;
 
+import edu.utsa.cs3443.replate.model.Food;
 import edu.utsa.cs3443.replate.model.PantryManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -10,7 +13,11 @@ public class PantryController {
     @FXML
     public void initialize() {
         pm = PantryManager.getInstance();
+        pm.loadPantry();
     }
+
+    private ObservableList<Food> masterPantry = FXCollections.observableArrayList(pm.getFoodPantryList());
+
 
     @FXML
     public void onFilterClick() {

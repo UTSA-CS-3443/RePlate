@@ -95,7 +95,7 @@
                         <Label fx:id="label_header_sub" styleClass="page-description" text="Description" />
                      </children>
                   </VBox>
-                  <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Add Food">
+                  <Button fx:id="addFoodButton" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Add Food">
                      <graphic>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -119,9 +119,9 @@
             </HBox>
             <HBox spacing="5.0">
                <children>
-                  <Button fx:id="button_filter_all" mnemonicParsing="false" onAction="#onAllFilterClick" styleClass="category-filter-active" text="All" />
-                  <Button fx:id="button_filter_veggies" mnemonicParsing="false" onAction="#onVeggieFilterClick" styleClass="category-filter-inactive" text="Vegetables" />
-                  <Button fx:id="button_filter_diary" mnemonicParsing="false" onAction="#onDairyFilterClick" styleClass="category-filter-inactive" text="Dairy" />
+                  <Button fx:id="allButton" mnemonicParsing="false" onAction="#onAllFilterClick" styleClass="category-filter-active" text="All" />
+                  <Button fx:id="veggiesButton" mnemonicParsing="false" onAction="#onVeggieFilterClick" styleClass="category-filter-inactive" text="Vegetables" />
+                  <Button fx:id="dairyButton" mnemonicParsing="false" onAction="#onDairyFilterClick" styleClass="category-filter-inactive" text="Dairy" />
                   <Button fx:id="proteinButton" mnemonicParsing="false" onAction="#onProteinFilterClick" styleClass="category-filter-inactive" text="Protein" />
                   <Button fx:id="fruitButton" mnemonicParsing="false" onAction="#onFruitFilterClick" styleClass="category-filter-inactive" text="Fruit" />
                   <Button fx:id="grainsButton" mnemonicParsing="false" onAction="#onGrainsFilterClick" styleClass="category-filter-inactive" text="Grains" />

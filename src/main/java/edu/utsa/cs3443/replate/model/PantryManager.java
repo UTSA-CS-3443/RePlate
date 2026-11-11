@@ -12,7 +12,7 @@ public class PantryManager {
 
     private PantryManager() {
         foods = new ArrayList<>();
-        foodDataFileName = "data/foods.csv";
+        foodDataFileName = "data/RePlateFoodPantry.csv";
     }
 
     public static PantryManager getInstance() {
