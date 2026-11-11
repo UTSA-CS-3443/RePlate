@@ -230,11 +230,10 @@
 }
 
 .priority-title {
-    -fx-font-family: "Lora";
-    -fx-font-size: 40px;
+    -fx-font-family: "Baskerville Old Face";
+    -fx-font-size: 25px;
     -fx-font-weight: normal;
-    -fx-text-fill: #FFFFFF;
-    -fx-background-color: transparent;
+    -fx-fill: #FFFFFF;
 }
 
 /* Place the image in an ImageView in FXML; this class is for its container. */
