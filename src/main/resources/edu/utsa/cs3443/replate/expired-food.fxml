@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="480.0" spacing="10.0" styleClass="sidebar" HBox.hgrow="SOMETIMES">
+         <children>
+            <ImageView fx:id="Logo" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/RePlate_logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" styleClass="navigation-item" text="Dashboard">
+               <graphic>
+                  <ImageView fx:id="b1_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/dashboard_default_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food">
+               <graphic>
+                  <ImageView fx:id="b2_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/add_food_default_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" styleClass="navigation-item" text="Expired">
+               <graphic>
+                  <ImageView fx:id="b3_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/expired_default_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="main_vbox" prefHeight="200.0" prefWidth="100.0" spacing="10.0" styleClass="main-content" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="0.0">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="label_header_super" styleClass="eyebrow" text="PANTRY CLEAN UP" />
+                        <Label fx:id="label_header_main" styleClass="page-title" text="Expired Food" />
+                        <Label fx:id="label_header_sub" styleClass="page-description" text="Description" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="dashboard_metric_1" styleClass="metric-card">
+               <children>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fx:id="label_metric_1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-description" text="Needs review" />
+                        <Text fx:id="label_metric_value_1" strokeType="OUTSIDE" strokeWidth="0.0" text="# items">
+                           <font>
+                              <Font name="Franklin Gothic Book" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/clock_alarm_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <VBox styleClass="inventory-table" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="557.0" styleClass="table-header">
+                     <children>
+                        <Label styleClass="expired-table-title" text="Expired food list" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
+                  <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox>
+                           <children>
+                              <HBox alignment="CENTER" fillHeight="false" spacing="5.0" styleClass="food-row">
+                                 <children>
+                                    <CheckBox mnemonicParsing="false" />
+                                    <HBox alignment="CENTER" prefWidth="64.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../images/fruit_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Label">
+                                             <font>
+                                                <Font name="Franklin Gothic Book" size="12.0" />
+                                             </font></Label>
+                                       </children>
+                                    </HBox>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label prefWidth="64.0" text="Label">
+                                       <font>
+                                          <Font name="Franklin Gothic Book" size="12.0" />
+                                       </font></Label>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="dash_detail_item_badge" prefWidth="64.0" styleClass="status-badge" text="Label" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <VBox styleClass="expired-label">
+                                       <children>
+                                          <Label styleClass="expired-label" text="Label" />
+                                          <Label styleClass="expired-date-label" text="Label" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" styleClass="food-row">
+                                 <children>
+                                    <CheckBox mnemonicParsing="false" />
+                                    <HBox alignment="CENTER" prefWidth="64.0">
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../images/grain_icon.png" />
+                                             </image>
+                                             <viewport>
+                                                <Rectangle2D />
+                                             </viewport>
+                                          </ImageView>
+                                          <Label text="Label" />
+                                       </children>
+                                    </HBox>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label prefWidth="64.0" text="Label" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="dash_detail_item_badge54" prefWidth="64.0" styleClass="status-badge" text="Label" />
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <VBox styleClass="expired-label">
+                                       <children>
+                                          <Label styleClass="expired-label" text="Label" />
+                                          <Label styleClass="expired-date-label" text="Label" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <CheckBox mnemonicParsing="false" text="Select all expired food">
+                     <font>
+                        <Font name="Franklin Gothic Book" size="12.0" />
+                     </font>
+                  </CheckBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="delete-button" text="Remove expired food">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../images/trash_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Dubai Medium" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>

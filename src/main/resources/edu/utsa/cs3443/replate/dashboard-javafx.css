@@ -192,6 +192,31 @@
     -fx-background-color: #d4cfc3;
 }
 
+.delete-button {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 14px;
+    -fx-font-weight: regular;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #A94836;
+    -fx-background-radius: 999px;
+    -fx-border-color: #A94836;
+    -fx-border-width: 1px;
+    -fx-border-radius: 999px;
+    -fx-padding: 5px 15px 5px 15px;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+/* Hover state feedback */
+.delete-button:hover {
+    -fx-background-color: #953E2E;
+    -fx-border-color: #953E2E;
+}
+
+.delete-button:pressed {
+    -fx-background-color: #853729;
+}
+
 /* ---------- Priority feature panel ---------- */
 
 .priority-feature {
@@ -528,4 +553,28 @@
     -fx-font-size: 9px;
     -fx-text-fill: #77786F;
     -fx-cursor: hand;
+}
+
+/* ==========================================
+   Expired Label / Small Table Column Header
+   ========================================== */
+.expired-label {
+    -fx-font-family: 'Franklin Gothic Book';
+    -fx-font-size: 8px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6B7168;
+}
+
+.expired-date-label {
+    -fx-font-family: 'Franklin Gothic Book';
+    -fx-font-size: 8px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #A94836;
+}
+
+.expired-table-title {
+    -fx-font-family: "Baskerville Old Face";
+    -fx-font-size: 25px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #20251F;
 }
