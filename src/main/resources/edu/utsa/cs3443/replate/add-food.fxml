@@ -32,19 +32,12 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="480.0" spacing="10.0" styleClass="sidebar" HBox.hgrow="SOMETIMES">
          <children>
@@ -98,7 +91,7 @@
                   <VBox alignment="BOTTOM_LEFT" maxHeight="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="label_header_super" styleClass="eyebrow" text="HEADER SUPER" />
-                        <Label fx:id="label_header_main" styleClass="page-title" text="Header Main" />
+                        <Label fx:id="label_header_main" styleClass="page-title" text="Add Food" />
                      </children>
                   </VBox>
                   <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="secondary-button" text="Cancel" />
@@ -108,8 +101,7 @@
                <children>
                   <HBox spacing="10.0">
                      <children>
-                        <Label fx:id="label_dash_detail_header" text="Label" />
-                        <Label fx:id="label_dash_detail_sub" text="Label" />
+                        <Label fx:id="label_dash_detail_header" text="Item Information" />
                      </children>
                   </HBox>
                   <Separator prefWidth="200.0" />
@@ -117,13 +109,13 @@
                      <children>
                         <VBox prefHeight="33.0" prefWidth="43.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Label" />
+                              <Label text="Name" />
                               <TextField styleClass="search-bar" />
                            </children>
                         </VBox>
                         <VBox prefHeight="52.0">
                            <children>
-                              <Label text="Label" />
+                              <Label text="Category" />
                               <MenuButton fx:id="menuButton_sort" mnemonicParsing="false" styleClass="combo-box" text="MenuButton">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Action 1" />
@@ -138,13 +130,13 @@
                      <children>
                         <VBox prefHeight="33.0" prefWidth="43.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Label" />
+                              <Label text="Quanity" />
                               <TextField styleClass="search-bar" />
                            </children>
                         </VBox>
                         <VBox prefHeight="52.0">
                            <children>
-                              <Label text="Label" />
+                              <Label text="Unit" />
                               <MenuButton fx:id="menuButton_sort1" mnemonicParsing="false" styleClass="combo-box" text="MenuButton">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Action 1" />
@@ -159,23 +151,18 @@
                      <children>
                         <VBox HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Label" />
-                              <TextField styleClass="search-bar" />
+                              <Label text="Expiration Date" />
+                              <DatePicker />
                            </children>
                         </VBox>
-                        <VBox HBox.hgrow="ALWAYS">
-                           <children>
-                              <Label text="Label" />
-                              <TextField styleClass="search-bar" />
-                           </children>
-                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox prefHeight="33.0" prefWidth="537.0" spacing="10.0">
                      <children>
                         <VBox prefHeight="33.0" prefWidth="43.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Label" />
+                              <Label text="Notes" />
                               <TextField styleClass="search-bar" />
                            </children>
                         </VBox>
