@@ -118,17 +118,18 @@
             <HBox spacing="10.0">
                <children>
                   <TextField fx:id="textField_searchbar" promptText="Search your pantry" styleClass="search-bar" HBox.hgrow="ALWAYS" />
-                  <MenuButton fx:id="menuButton_sort" alignment="TOP_LEFT" mnemonicParsing="false" styleClass="combo-box" text="MenuButton">
+                  <MenuButton fx:id="menuButton_sort" alignment="TOP_LEFT" mnemonicParsing="false" prefWidth="115.0" styleClass="combo-box" text="Recent">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
+                      <MenuItem mnemonicParsing="false" text="Soonest" />
+                      <MenuItem mnemonicParsing="false" text="Latest" />
+                        <MenuItem fx:id="menuButton_sort" mnemonicParsing="false" text="Alphabetical" />
                     </items>
                   </MenuButton>
                </children>
             </HBox>
             <HBox spacing="5.0">
                <children>
-                  <Button fx:id="button_filter_1" mnemonicParsing="false" styleClass="category-filter-active" text="Button X" />
+                  <Button fx:id="button_filter_1" mnemonicParsing="false" styleClass="category-filter-active" text="All X" />
                   <Button fx:id="button_filter_2" mnemonicParsing="false" styleClass="category-filter-inactive" text="Vegetables X" />
                   <Button fx:id="button_filter_21" mnemonicParsing="false" styleClass="category-filter-inactive" text="Dairy X" />
                   <Button fx:id="button_filter_22" mnemonicParsing="false" styleClass="category-filter-inactive" text="Protein X" />

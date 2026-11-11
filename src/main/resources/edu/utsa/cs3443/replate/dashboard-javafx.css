@@ -413,6 +413,7 @@
     -fx-border-width: 1px;
     -fx-border-radius: 12px;
     -fx-padding: 0 5px;
+    -fx-pref-width: 115px;
 }
 
 /* Focused State (Optional enhancement for border/glow) */
