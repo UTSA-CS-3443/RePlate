@@ -44,7 +44,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.replate.DashboardController">
    <children>
       <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="480.0" spacing="10.0" styleClass="sidebar" HBox.hgrow="SOMETIMES">
          <children>
@@ -99,10 +99,10 @@
                      <children>
                         <Label fx:id="label_header_super" styleClass="eyebrow" text="DATE" />
                         <Label fx:id="label_header_main" styleClass="page-title" text="Hello" />
-                        <Label fx:id="label_header_sub" styleClass="page-description" text="Description" />
+                        <Label fx:id="label_header_sub" styleClass="page-description" text="A few thoughtful choices today will keep this week’s groceries in play." />
                      </children>
                   </VBox>
-                  <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Add Food">
+                  <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" onAction="#onPressButtonAdd" styleClass="primary-button" text="Add Food">
                      <graphic>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -120,7 +120,7 @@
                <children>
                   <VBox alignment="BOTTOM_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0" styleClass="priority-copy" HBox.hgrow="ALWAYS">
                      <children>
-                        <Text fx:id="label_main_tile" strokeType="OUTSIDE" strokeWidth="0.0" text="LABEL" wrappingWidth="288.826171875" />
+                        <Text fx:id="label_main_tile" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="priority-title" text="Make tonight count with your ingredients." wrappingWidth="288.826171875" />
                         <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
                         <Button fx:id="button_main_tile" mnemonicParsing="false" styleClass="secondary-button" text="Button" />
                      </children>
@@ -132,32 +132,28 @@
                   </ImageView>
                </children>
             </HBox>
-            <HBox fx:id="dashboard_detail_header" alignment="BOTTOM_LEFT" fillHeight="false" spacing="10.0" styleClass="expired-table-title">
-               <children>
-                  <Text fx:id="label_metric_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Pantry Items #" />
-               </children>
-            </HBox>
+            <Label fx:id="dashboard_detail_header" styleClass="expired-table-title" text="Pantry Items #" />
             <VBox fx:id="dashboard_detail" styleClass="metric-card" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox spacing="10.0">
+                  <HBox alignment="BASELINE_LEFT" spacing="10.0">
                      <children>
-                        <Label fx:id="label_dash_detail_header" text="Label" />
-                        <Label fx:id="label_dash_detail_sub" text="Label" />
+                        <Label fx:id="label_dash_detail_header" text="Expiring soon">
+                           <font>
+                              <Font name="Baskerville Old Face" size="18.0" />
+                           </font></Label>
+                        <Label fx:id="label_dash_detail_sub" styleClass="page-description" text="Plan these into your next meal" />
                      </children>
                   </HBox>
                   <Separator prefWidth="200.0" />
-                  <VBox>
+                  <HBox prefHeight="20.0" spacing="5.0">
                      <children>
-                        <HBox prefHeight="20.0" spacing="5.0">
-                           <children>
-                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
-                              <Label text="Label" />
-                              <Label text="Label" />
-                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Label fx:id="dash_detail_item_badge" styleClass="status-badge" text="Label" />
-                           </children>
-                        </HBox>
-                     </children></VBox>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label text="Title" />
+                        <Label text="Quantity" />
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="dash_detail_item_badge" styleClass="status-badge" text="Label" />
+                     </children>
+                  </HBox>
                </children></VBox>
          </children>
          <HBox.margin>
