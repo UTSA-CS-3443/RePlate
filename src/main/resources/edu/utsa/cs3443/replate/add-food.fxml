@@ -102,7 +102,7 @@
                         <Label fx:id="label_header_main" styleClass="page-title" text="Add Food" />
                      </children>
                   </VBox>
-                  <Button fx:id="button_cancel" alignment="CENTER" mnemonicParsing="false" onAction="#returnToDashboard" styleClass="secondary-button" text="Cancel" />
+                  <Button fx:id="button_cancel" alignment="CENTER" mnemonicParsing="false" onAction="#openDashboardScene" styleClass="secondary-button" text="Cancel" />
                </children>
             </HBox>
             <VBox fx:id="dashboard_detail" spacing="10.0" styleClass="metric-card" VBox.vgrow="ALWAYS">

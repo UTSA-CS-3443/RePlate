@@ -13,10 +13,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DashboardController implements SceneAware {
-    private SceneManager sceneManager;
-    private Stage stage;
-
+public class DashboardController extends Controller {
+//    private Stage stage;
 
     public DashboardController() {
         System.out.println("DashboardController instantiated!");
@@ -37,19 +35,8 @@ public class DashboardController implements SceneAware {
     @FXML
     private VBox dashboard_detail;
 
-
-    @Override
-    public void setSceneManager(SceneManager sceneManager) {
-        this.sceneManager = sceneManager;
-    }
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
-    }
-
-    public void onPressButtonAdd() {
-        sceneManager.switchScene("add-food");
-    }
-
+//    public void setStage(Stage stage) {
+//        this.stage = stage;
+//    }
 
 }

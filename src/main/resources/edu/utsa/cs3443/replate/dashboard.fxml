@@ -102,7 +102,7 @@
                         <Label fx:id="label_header_sub" styleClass="page-description" text="A few thoughtful choices today will keep this week’s groceries in play." />
                      </children>
                   </VBox>
-                  <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" onAction="#onPressButtonAdd" styleClass="primary-button" text="Add Food">
+                  <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" onAction="#openAddScene" styleClass="primary-button" text="Add Food">
                      <graphic>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -122,7 +122,7 @@
                      <children>
                         <Text fx:id="label_main_tile" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="priority-title" text="Make tonight count with your ingredients." wrappingWidth="288.826171875" />
                         <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <Button fx:id="button_main_tile" mnemonicParsing="false" styleClass="secondary-button" text="Button" />
+                        <Button fx:id="button_main_tile" mnemonicParsing="false" styleClass="secondary-button" text="Pantry" />
                      </children>
                   </VBox>
                   <ImageView fx:id="image_main_tile" blendMode="SCREEN" cache="true" fitHeight="133.0" fitWidth="229.0" pickOnBounds="true" preserveRatio="true" styleClass="fresh-ingredients-image" HBox.hgrow="ALWAYS">

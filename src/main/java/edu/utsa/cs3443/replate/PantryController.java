@@ -7,8 +7,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class PantryController {
+public class PantryController extends Controller{
     private PantryManager pm;
+
+    public PantryController(){
+        System.out.println("PantryController Instantiated");
+    }
 
     @FXML
     public void initialize() {
