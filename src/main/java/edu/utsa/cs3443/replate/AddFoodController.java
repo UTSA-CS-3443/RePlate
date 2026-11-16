@@ -8,10 +8,11 @@ import javafx.scene.control.TextField;
 
 import java.time.LocalDate;
 
-public class AddFoodController {
+public class AddFoodController implements SceneAware {
 
     private PantryManager pantryManager;
 
+    private SceneManager sceneManager;
     @FXML private TextField nameField;
     @FXML private TextField quantityField;
     @FXML private TextField unitField;
@@ -46,5 +47,14 @@ public class AddFoodController {
         unitField.clear();
         categoryField.clear();
         expireDatePicker.setValue(null);
+    }
+
+    @Override
+    public void setSceneManager(SceneManager sceneManager) {
+        this.sceneManager = sceneManager;
+    }
+    
+    public void returnToDashboard() {
+        sceneManager.switchScene("dashboard");
     }
 }
