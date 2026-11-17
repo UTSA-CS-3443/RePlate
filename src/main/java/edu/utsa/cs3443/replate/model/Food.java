@@ -3,7 +3,7 @@ package edu.utsa.cs3443.replate.model;
 import java.time.LocalDate;
 
 public class Food implements Conversion{
-    private int id;
+    private String id;
     private String name;
     private double quantity;
     private String unit;
@@ -14,7 +14,7 @@ public class Food implements Conversion{
     private String color;
 
     // Initialize food with set data
-    public Food(int id, String name, double quantity, String unit, LocalDate addedDate, LocalDate expireDate, String notes, String category, String color) {
+    public Food(String id, String name, double quantity, String unit, LocalDate addedDate, LocalDate expireDate, String notes, String category, String color) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
@@ -27,7 +27,7 @@ public class Food implements Conversion{
     }
 
     // Initialize food with no notes
-    public Food(int id, String name, double quantity, String unit, LocalDate addedDate, LocalDate expireDate, String category, String color) {
+    public Food(String id, String name, double quantity, String unit, LocalDate addedDate, LocalDate expireDate, String category, String color) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
@@ -39,7 +39,7 @@ public class Food implements Conversion{
         this.color = color;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

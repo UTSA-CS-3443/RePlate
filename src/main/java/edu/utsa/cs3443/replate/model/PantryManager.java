@@ -72,10 +72,10 @@ public class PantryManager {
         return false;
     }
 
-    public boolean isFoodExists(int id) {
+    public boolean isFoodExists(String id) {
 
         for (Food food : foods) {
-            if (food.getId() == id) {
+            if (food.getId().equals(id)) {
                 return true;
             }
         }
@@ -92,7 +92,7 @@ public class PantryManager {
 
             Food originalFood = foods.get(i);
 
-            if (originalFood.getId() == food.getId()) {
+            if (originalFood.getId().equals(food.getId())) {
 
                 foods.set(i, food);
 
@@ -119,7 +119,7 @@ public class PantryManager {
 
             Food currentFood = foods.get(i);
 
-            if (currentFood.getId() == food.getId()) {
+            if (currentFood.getId().equals(food.getId())) {
 
                 foods.remove(i);
 
@@ -138,9 +138,9 @@ public class PantryManager {
         return false;
     }
 
-    public Food findFood(int id) {
+    public Food findFood(String id) {
         for (Food food : foods) {
-            if (food.getId() == id) {
+            if (food.getId().equals(id)) {
                 return food;
             }
         }
@@ -152,22 +152,34 @@ public class PantryManager {
     }
 
     private String convertFoodToLine(Food food, String delimiter) {
-
-        return food.getName() + delimiter + food.getQuantity() + delimiter +
+        String notes = food.getNotes() == null ? "" : food.getNotes().replace(",", ";");
+        return food.getId() + delimiter + food.getName() + delimiter +
+                food.getCategory() + delimiter + food.getQuantity() + delimiter +
                 food.getUnit() + delimiter + food.getAddedDate() + delimiter +
-                food.getExpireDate() + delimiter + food.getNotes() + delimiter +
-                food.getCategory() + delimiter + food.getColor();
+                food.getExpireDate() + delimiter + notes;
     }
 
     private Food convertLineToFood(String line, String delimiter) {
-        String[] attributes = line.split(delimiter);
-        if (attributes.length != 9) {
+        String[] attributes = line.split(delimiter, -1);
+        if (attributes.length != 8) {
             return null;
         }
+        return new Food(attributes[0], attributes[1], Double.parseDouble(attributes[3]), attributes[4],
+                LocalDate.parse(attributes[5]), LocalDate.parse(attributes[6]), attributes[7], attributes[2], "");
+    }
 
-        return new Food(Integer.parseInt(attributes[0]), attributes[1], Double.parseDouble(attributes[2]), attributes[3],
-                LocalDate.parse(attributes[4]), LocalDate.parse(attributes[5]), attributes[6], attributes[7], attributes[8]);
-
+    public String generateId(String category) {
+        String prefix = (category == null || category.length() < 3)
+                ? "MSC" : category.substring(0, 3).toUpperCase();
+        int max = 0;
+        for (Food food : foods) {
+            String id = food.getId();
+            int dash = id.lastIndexOf('-');
+            try {
+                max = Math.max(max, Integer.parseInt(id.substring(dash + 1)));
+            } catch (NumberFormatException ignored) { }
+        }
+        return String.format("RP-%s-%04d", prefix, max + 1);
     }
 
     private boolean saveDataToFile() {
@@ -175,8 +187,7 @@ public class PantryManager {
         try (BufferedWriter bw = new BufferedWriter(
                 new FileWriter(foodDataFileName))) {
 
-            bw.write("Name,Id Number,Quantity,Unit,Added Date,Expiration Date,Notes,Category,Color");
-            bw.newLine();
+            bw.write("item_id,food_name,category,amount,unit,purchased_on,best_before,notes");            bw.newLine();
 
             for (Food food : foods) {
                 bw.write(convertFoodToLine(food, ","));

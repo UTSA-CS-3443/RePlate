@@ -58,7 +58,7 @@
                   <Insets />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" styleClass="navigation-item" text="Dashboard">
+            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" styleClass="navigation-item" text="Dashboard" onAction="#openDashboardScene">
                <graphic>
                   <ImageView fx:id="b1_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,7 +67,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food">
+            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food" onAction="#openAddScene">
                <graphic>
                   <ImageView fx:id="b2_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -76,7 +76,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" styleClass="navigation-item" text="Expired">
+            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" styleClass="navigation-item" text="Expired" onAction="#openExpiredFoodScene">
                <graphic>
                   <ImageView fx:id="b3_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -104,7 +104,7 @@
                         <Label fx:id="label_header_sub" styleClass="page-description" text="Description" />
                      </children>
                   </VBox>
-                  <Button fx:id="addFoodButton" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Add Food">
+                  <Button fx:id="addFoodButton" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Add Food" onAction="#openAddScene">
                      <graphic>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -17,34 +17,37 @@ public class PantryController extends Controller{
     @FXML
     public void initialize() {
         pm = PantryManager.getInstance();
-        pm.loadPantry();
+        masterPantry = FXCollections.observableArrayList(pm.getFoodPantryList());
     }
 
-    private ObservableList<Food> masterPantry = FXCollections.observableArrayList(pm.getFoodPantryList());
+    private ObservableList<Food> masterPantry;
 
 
-    @FXML
-    public void onFilterClick() {
-
-    }
-
-    @FXML
-    public void onAddFoodButtonClick() {
+    @FXML public void onAllFilterClick() {
 
     }
 
-    @FXML
-    public void onEditButtonClick() {
+    @FXML public void onVeggieFilterClick() {
 
     }
 
-    @FXML
-    public void onRemoveButtonClick() {
+    @FXML public void onDairyFilterClick() {
 
     }
 
-    @FXML
-    public void displayPantry() {
+    @FXML public void onProteinFilterClick() {
+
+    }
+
+    @FXML public void onFruitFilterClick() {
+
+    }
+
+    @FXML public void onGrainsFilterClick() {
+
+    }
+
+    @FXML public void onMiscFilterClick() {
 
     }
 }

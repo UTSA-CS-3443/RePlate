@@ -1,11 +1,12 @@
 item_id,food_name,category,amount,unit,purchased_on,best_before,notes
-RP-VEG-0284,Baby spinach,Vegetable,1,bag · 140 g,2026-09-27,2026-10-01,Wash before using
-RP-VEG-0285,Cremini mushrooms,Vegetable,1,package · 225 g,2026-09-27,2026-10-04,Greenway Market
-RP-DAI-0112,Whole milk ricotta,Dairy,1,tub · 425 g,2026-09-25,2026-10-09,Use within 5 days of opening
-RP-BAK-0047,Sourdough bread,Bakery,1,loaf · 680 g,2026-09-28,2026-10-02,Freeze extra slices
-RP-FRU-0193,Lemon,Fruit,2,each,2026-09-24,2026-10-15,
-RP-DAI-0113,Large eggs,Dairy,12,each,2026-09-20,2026-10-25,
-RP-GRN-0031,Cooked rice,Grain,2,cup,2026-10-18,2026-10-22,Leftovers · store in fridge
-RP-VEG-0286,Green onions,Vegetable,1,bunch,2026-10-12,2026-10-21,
-RP-MEA-0058,Chicken thighs,Meat,1,package · 680 g,2026-10-17,2026-10-20,Freeze if not used by Tuesday
-RP-PAN-0009,Olive oil,Pantry,1,bottle · 500 ml,2026-08-02,2027-08-01,
+RP-VEG-0284,Baby spinach,Vegetable,1.0,bag · 140 g,2026-09-27,2026-10-01,Wash before using
+RP-VEG-0285,Cremini mushrooms,Vegetable,1.0,package · 225 g,2026-09-27,2026-10-04,Greenway Market
+RP-DAI-0112,Whole milk ricotta,Dairy,1.0,tub · 425 g,2026-09-25,2026-10-09,Use within 5 days of opening
+RP-BAK-0047,Sourdough bread,Bakery,1.0,loaf · 680 g,2026-09-28,2026-10-02,Freeze extra slices
+RP-FRU-0193,Lemon,Fruit,2.0,each,2026-09-24,2026-10-15,
+RP-DAI-0113,Large eggs,Dairy,12.0,each,2026-09-20,2026-10-25,
+RP-GRN-0031,Cooked rice,Grain,2.0,cup,2026-10-18,2026-10-22,Leftovers · store in fridge
+RP-VEG-0286,Green onions,Vegetable,1.0,bunch,2026-10-12,2026-10-21,
+RP-MEA-0058,Chicken thighs,Meat,1.0,package · 680 g,2026-10-17,2026-10-20,Freeze if not used by Tuesday
+RP-PAN-0009,Olive oil,Pantry,1.0,bottle · 500 ml,2026-08-02,2027-08-01,
+RP-DAI-0287,testName,Dairy,1.0,cup,2026-11-17,2026-11-17,testNote
