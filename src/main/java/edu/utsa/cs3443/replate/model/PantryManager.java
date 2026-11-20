@@ -1,17 +1,19 @@
 package edu.utsa.cs3443.replate.model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
 public class PantryManager {
-    public ArrayList<Food> foods = new ArrayList<Food>();
+    public ObservableList<Food> foods = FXCollections.observableArrayList();
     private final String foodDataFileName;
 
     private static PantryManager instance;
 
     private PantryManager() {
-        foods = new ArrayList<>();
         foodDataFileName = "data/RePlateFoodPantry.csv";
     }
 
@@ -147,7 +149,7 @@ public class PantryManager {
         return null;
     }
 
-    public ArrayList<Food> getFoodPantryList() {
+    public ObservableList<Food> getFoodPantryList() {
         return foods;
     }
 
