@@ -84,6 +84,7 @@ public class PantryController extends Controller{
 
     private void openEditFood(Food food) {
         System.out.println("Editing: " + food.getName());
+        openEditScene(food);
     }
 
     private void applyFilters() {

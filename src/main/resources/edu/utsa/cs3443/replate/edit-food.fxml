@@ -36,8 +36,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -46,7 +45,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.replate.UpdateFoodController">
    <children>
       <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="480.0" spacing="10.0" styleClass="sidebar" HBox.hgrow="SOMETIMES">
          <children>
@@ -58,7 +57,7 @@
                   <Insets />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" styleClass="navigation-item" text="Dashboard">
+            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" styleClass="navigation-item" text="Dashboard" onAction="#openDashboardScene">
                <graphic>
                   <ImageView fx:id="b1_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,7 +66,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food">
+            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food" onAction="#openAddScene">
                <graphic>
                   <ImageView fx:id="b2_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -76,7 +75,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" styleClass="navigation-item" text="Expired">
+            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" styleClass="navigation-item" text="Expired" onAction="#openExpiredFoodScene">
                <graphic>
                   <ImageView fx:id="b3_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -103,7 +102,7 @@
                         <Label fx:id="label_header_main" styleClass="page-title" text="page-title" />
                      </children>
                   </VBox>
-                  <Button fx:id="button_cancel" alignment="CENTER" mnemonicParsing="false" onAction="#returnToDashboard" styleClass="secondary-button" text="Cancel" />
+                  <Button fx:id="button_cancel" alignment="CENTER" mnemonicParsing="false" onAction="#onCancelClick" styleClass="secondary-button" text="Cancel" />
                </children>
             </HBox>
             <VBox fx:id="vbox_information" spacing="10.0" styleClass="metric-card" VBox.vgrow="ALWAYS">
@@ -124,12 +123,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="52.0">
                            <children>
-                              <MenuButton fx:id="menubutton_category" mnemonicParsing="false" styleClass="combo-box" text="Category">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
+                              <ComboBox fx:id="categoryBox" promptText="Category" styleClass="combo-box" />
                            </children>
                         </VBox>
                      </children>
@@ -144,12 +138,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="52.0">
                            <children>
-                              <MenuButton fx:id="menuButton_unit" mnemonicParsing="false" styleClass="combo-box" text="Unit">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Action 1" />
-                                    <MenuItem mnemonicParsing="false" text="Action 2" />
-                                 </items>
-                              </MenuButton>
+                              <ComboBox fx:id="unitBox" editable="true" promptText="Unit" styleClass="combo-box" />
                            </children>
                         </VBox>
                      </children>
@@ -159,7 +148,7 @@
                         <VBox HBox.hgrow="ALWAYS">
                            <children>
                               <Label text="Expiration Date" />
-                              <DatePicker fx:id="expiration_datepicker" />
+                              <DatePicker fx:id="expireDatePicker" />
                            </children>
                         </VBox>
                         <VBox HBox.hgrow="ALWAYS" />
@@ -177,7 +166,7 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" spacing="10.0">
                      <children>
-                        <Button fx:id="button_remove" alignment="CENTER" mnemonicParsing="false" styleClass="delete-button" text="Remove">
+                        <Button fx:id="button_remove" alignment="CENTER" mnemonicParsing="false" styleClass="delete-button" text="Remove" onAction="#onRemoveClick">
                            <graphic>
                               <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -186,7 +175,7 @@
                               </ImageView>
                            </graphic></Button>
                         <Region HBox.hgrow="ALWAYS" />
-                        <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Add Food">
+                        <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Save Changes" onAction="#updateFood">
                            <graphic>
                               <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

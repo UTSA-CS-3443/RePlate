@@ -22,6 +22,8 @@ public class SceneManager {
         }
     };
 
+    private final Map<String, Object> controllers = new HashMap<>();
+
     public SceneManager(Stage stage) {
         this.stage = stage;
     }
@@ -41,6 +43,7 @@ public class SceneManager {
                 aware.setSceneManager(this);
             }
             scenes.put(name, new Scene(root));
+            controllers.put(name, controller);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -56,6 +59,10 @@ public class SceneManager {
         } else {
             System.out.println("Scene not found: " + name);
         }
+    }
+
+    public Object getController(String name) {
+        return controllers.get(name);
     }
 
     public FXMLLoader getLoader() {

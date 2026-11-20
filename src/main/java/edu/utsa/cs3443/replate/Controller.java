@@ -1,4 +1,5 @@
 package edu.utsa.cs3443.replate;
+import edu.utsa.cs3443.replate.model.Food;
 
 public class Controller implements SceneAware {
     private SceneManager sceneManager;
@@ -19,5 +20,12 @@ public class Controller implements SceneAware {
     }
     public void openExpiredFoodScene() {
         sceneManager.switchScene("expired-food");
+    }
+
+    public void openEditScene(Food food) {
+        UpdateFoodController editController =
+                (UpdateFoodController) sceneManager.getController("edit-food");
+        editController.setSelectedFood(food);
+        sceneManager.switchScene("edit-food");
     }
 }
