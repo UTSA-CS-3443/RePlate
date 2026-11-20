@@ -10,14 +10,15 @@ import javafx.scene.control.*;
 public class PantryController extends Controller{
     private PantryManager pm;
 
-    public PantryController(){
-        System.out.println("PantryController Instantiated");
-    }
+//    public PantryController(){
+//
+//    }
 
     @FXML
     public void initialize() {
         pm = PantryManager.getInstance();
         masterPantry = FXCollections.observableArrayList(pm.getFoodPantryList());
+        System.out.println("PantryController initialized!");
     }
 
     private ObservableList<Food> masterPantry;

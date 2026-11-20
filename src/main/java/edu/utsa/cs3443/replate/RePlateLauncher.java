@@ -18,7 +18,8 @@ public class RePlateLauncher extends Application {
             sceneManager.addScene("dashboard", "dashboard.fxml");
             sceneManager.addScene("add-food", "add-food.fxml");
             sceneManager.addScene("food-pantry", "food-pantry.fxml");
-//            sceneManager.addScene("expired-food", "expired-food.fxml");
+            sceneManager.addScene("expired-food", "expired-food.fxml");
+            sceneManager.addScene("edit-food", "edit-food.fxml");
 
             sceneManager.switchScene("dashboard");
             System.out.println(sceneManager.getMap());
