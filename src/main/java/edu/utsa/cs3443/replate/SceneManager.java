@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SceneManager {
 
@@ -14,7 +15,12 @@ public class SceneManager {
     private FXMLLoader loader;
 
     // Stores previously loaded scenes
-    private final Map<String, Scene> scenes = new HashMap<>();
+    private final Map<String, Scene> scenes = new HashMap<>(){
+        @Override
+        public String toString() {
+            return "{" + this.entrySet().stream().map(entry -> entry.getKey()).collect(Collectors.joining(", ")) + "}";
+        }
+    };
 
     public SceneManager(Stage stage) {
         this.stage = stage;
@@ -48,7 +54,6 @@ public class SceneManager {
         if (scene != null) {
             stage.setScene(scene);
         } else {
-            System.out.println(scenes);
             System.out.println("Scene not found: " + name);
         }
     }
@@ -57,8 +62,8 @@ public class SceneManager {
         return loader;
     }
 
-    public Scene getScene(String name) {
-        return scenes.get(name);
+    public Scene getScene() {
+        return stage.getScene();
     }
 
     public Map<String, Scene> getMap() {

@@ -138,7 +138,7 @@
                      <children>
                         <VBox prefHeight="33.0" prefWidth="43.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Quantityy" />
+                              <Label text="Quantity" />
                               <TextField fx:id="quantityField" styleClass="search-bar" />
                            </children>
                         </VBox>
