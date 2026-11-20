@@ -65,6 +65,15 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Button fx:id="button_sidebar_pantry" mnemonicParsing="false" onAction="#openPantryScene" styleClass="navigation-item" text="Pantry">
+               <graphic>
+                  <ImageView fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/pantry_default_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food" onAction="#openAddScene">
                <graphic>
                   <ImageView fx:id="b2_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
