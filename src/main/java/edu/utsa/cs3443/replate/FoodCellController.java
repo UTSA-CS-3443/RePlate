@@ -1,11 +1,13 @@
 package edu.utsa.cs3443.replate;
 
 import edu.utsa.cs3443.replate.model.Food;
+import edu.utsa.cs3443.replate.model.PantryManager;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import java.util.Optional;
+import java.util.function.Consumer;
 
 public class FoodCellController {
 
@@ -18,6 +20,7 @@ public class FoodCellController {
     @FXML private Button deleteButton;
 
     private Food food;
+    private Consumer<Food> editAction;
 
     public void setFood(Food food) {
         this.food = food;
@@ -83,13 +86,39 @@ public class FoodCellController {
         );
     }
 
+    public void setEditAction(Consumer<Food> editAction) {
+        this.editAction = editAction;
+    }
+
     @FXML
     private void onEditClick() {
-        System.out.println("Edit: " + food.getName());
+
+        if (food != null && editAction != null) {
+            editAction.accept(food);
+        }
     }
 
     @FXML
     private void onDeleteClick() {
-        System.out.println("Delete: " + food.getName());
+
+        if (food == null) {
+            return;
+        }
+
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+
+        confirmation.setTitle("Delete Food");
+        confirmation.setHeaderText("Delete " + food.getName() + "?");
+        confirmation.setContentText("Are you sure you want to remove this food from your pantry?");
+
+        Optional<ButtonType> result = confirmation.showAndWait();
+
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            PantryManager pm = PantryManager.getInstance();
+            pm.deleteFood(food);
+
+            System.out.println("Delete: " + food.getName());
+        }
+
     }
 }

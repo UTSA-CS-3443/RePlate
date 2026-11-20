@@ -127,11 +127,11 @@ public class PantryManager {
 
                 if (saveDataToFile()) {
                     System.out.println(
-                            foods.size() + " ships saved to file");
+                            foods.size() + " food items saved to file");
                     return true;
                 }
 
-                // Restore the ship if saving failed.
+                // Restore the item if saving failed.
                 foods.add(i, currentFood);
                 return false;
             }

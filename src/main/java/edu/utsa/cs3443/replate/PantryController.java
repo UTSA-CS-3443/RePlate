@@ -17,8 +17,9 @@ import java.io.IOException;
 
 public class PantryController extends Controller{
     private PantryManager pm;
-
     private ObservableList<Food> masterPantry;
+    private FilteredList<Food> filteredPantry;
+    private String selectedCategory = "All";
 
     @FXML
     private ListView<Food> pantryList;
@@ -26,7 +27,6 @@ public class PantryController extends Controller{
     @FXML
     private TextField searchBar;
 
-    private FilteredList<Food> filteredPantry;
 
 
     public PantryController(){
@@ -38,7 +38,8 @@ public class PantryController extends Controller{
         pm = PantryManager.getInstance();
         masterPantry = pm.getFoodPantryList();
 
-        filteredPantry = new FilteredList<>(masterPantry, food -> true);
+        filteredPantry = new FilteredList<>(
+                masterPantry, food -> true);
 
         pantryList.setItems(filteredPantry);
 
@@ -54,6 +55,8 @@ public class PantryController extends Controller{
 
                     row = loader.load();
                     cellController = loader.getController();
+
+                    cellController.setEditAction(food -> openEditFood(food));
                 } catch (IOException e) {
                     throw new RuntimeException("Unable to load food-cell.fxml", e);
                 }
@@ -79,47 +82,110 @@ public class PantryController extends Controller{
         });
     }
 
-    @FXML
-    public void onSearchClick() {
+    private void openEditFood(Food food) {
+        System.out.println("Editing: " + food.getName());
+    }
+
+    private void applyFilters() {
         String searchText = searchBar.getText().trim().toLowerCase();
 
         filteredPantry.setPredicate(food -> {
-            if (searchText.isEmpty()) {
-                return true;
+
+            if (food == null) {
+                return false;
             }
 
-            return food.getName() != null &&
-                    food.getName().toLowerCase().contains(searchText);
+            boolean matchesSearch =
+                    searchText.isEmpty() ||
+                    (food.getName() != null &&
+                    food.getName().toLowerCase().contains(searchText));
 
+            boolean matchesCategory = false;
+
+            String category = food.getCategory();
+
+            if (category == null) {
+                category = "";
+            }
+
+            if (selectedCategory.equals("All")) {
+                matchesCategory = true;
+            }
+            else if (selectedCategory.equals("Vegetable")) {
+                matchesCategory = category.equalsIgnoreCase("Vegetable") ||
+                category.equalsIgnoreCase("Vegetables");
+            }
+            else if (selectedCategory.equals("Fruit")) {
+                matchesCategory = category.equalsIgnoreCase(("Fruit")) ||
+                category.equalsIgnoreCase("Fruits");
+            }
+            else if (selectedCategory.equals("Protein")) {
+                matchesCategory = category.equalsIgnoreCase("Protein") ||
+                category.equalsIgnoreCase("Meat");
+            }
+            else if (selectedCategory.equals("Grains")) {
+                matchesCategory = category.equalsIgnoreCase("Grains") ||
+                        category.equalsIgnoreCase("Grain") ||
+                        category.equalsIgnoreCase("Bakery");
+            }
+            else if (selectedCategory.equals("Dairy")) {
+                matchesCategory = category.equalsIgnoreCase("Dairy");
+            }
+            else if (selectedCategory.equals("Misc")) {
+                matchesCategory = !category.equalsIgnoreCase("Vegetables")
+                        && !category.equalsIgnoreCase("Vegetable")
+                        && !category.equalsIgnoreCase("Fruit")
+                        && !category.equalsIgnoreCase("Fruits")
+                        && !category.equalsIgnoreCase("Dairy")
+                        && !category.equalsIgnoreCase("Grain")
+                        && !category.equalsIgnoreCase("Grains")
+                        && !category.equalsIgnoreCase("Bakery")
+                        && !category.equalsIgnoreCase("Protein")
+                        && !category.equalsIgnoreCase("Meat");
+            }
+
+            return matchesSearch && matchesCategory;
         });
     }
 
     @FXML
-    public void onAllFilterClick() {
+    public void onSearchClick() {
+        applyFilters();
+    }
 
+    @FXML
+    public void onAllFilterClick() {
+        selectedCategory = "All";
+        applyFilters();
     }
 
     @FXML public void onVeggieFilterClick() {
-
+        selectedCategory = "Vegetable";
+        applyFilters();
     }
 
     @FXML public void onDairyFilterClick() {
-
+        selectedCategory = "Dairy";
+        applyFilters();
     }
 
     @FXML public void onProteinFilterClick() {
-
+        selectedCategory = "Protein";
+        applyFilters();
     }
 
     @FXML public void onFruitFilterClick() {
-
+        selectedCategory = "Fruit";
+        applyFilters();
     }
 
     @FXML public void onGrainsFilterClick() {
-
+        selectedCategory = "Grains";
+        applyFilters();
     }
 
     @FXML public void onMiscFilterClick() {
-
+        selectedCategory = "Misc";
+        applyFilters();
     }
 }
