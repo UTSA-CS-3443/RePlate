@@ -132,19 +132,35 @@
             </HBox>
             <VBox prefHeight="200.0" prefWidth="100.0" styleClass="inventory-table" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER_LEFT" styleClass="table-header">
+                  <HBox alignment="CENTER_LEFT"
+                        spacing="10"
+                        styleClass="table-header">
+
                      <children>
-                        <Label prefWidth="64.0" text="FOOD ITEM" />
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Label prefWidth="64.0" text="QUANTITY" />
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Label prefWidth="64.0" text="BEST BEFORE" />
-                        <Region HBox.hgrow="ALWAYS" />
-                        <Region prefWidth="24.0" />
+                        <Label prefWidth="230"
+                               minWidth="230"
+                               maxWidth="230"
+                               text="FOOD ITEM" />
+
+                        <Label prefWidth="180"
+                               minWidth="180"
+                               maxWidth="180"
+                               text="QUANTITY" />
+
+                        <Label prefWidth="130"
+                               minWidth="130"
+                               maxWidth="130"
+                               text="BEST BEFORE" />
+
+                        <Region prefWidth="75"
+                                minWidth="75"
+                                maxWidth="75" />
                      </children>
+
                      <padding>
-                        <Insets left="20.0" />
+                        <Insets left="10" />
                      </padding>
+
                   </HBox>
                   <ListView fx:id="pantryList"
                             VBox.vgrow="ALWAYS"
