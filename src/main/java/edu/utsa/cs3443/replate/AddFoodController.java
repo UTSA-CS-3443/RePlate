@@ -31,7 +31,7 @@ public class AddFoodController extends Controller {
                 "Vegetable", "Fruit", "Dairy", "Meat", "Grain", "Bakery", "Pantry");
         unitBox.getItems().addAll(
                 "each", "unit", "cup", "bunch", "bag", "package", "bottle", "g", "oz", "lb");
-        System.out.println("AddFoodController initialized!");
+        System.out.println("AddFoodController");
     }
 
     public void setPantryManager(PantryManager pantryManager) {

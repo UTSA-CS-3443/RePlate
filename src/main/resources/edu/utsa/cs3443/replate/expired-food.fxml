@@ -46,7 +46,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.replate.ExpiredFoodController">
    <children>
       <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="480.0" spacing="10.0" styleClass="sidebar" HBox.hgrow="SOMETIMES">
          <children>
@@ -58,7 +58,7 @@
                   <Insets />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" styleClass="navigation-item" text="Dashboard">
+            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" styleClass="navigation-item" text="Dashboard" onAction="#openDashboardScene">
                <graphic>
                   <ImageView fx:id="b1_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,7 +67,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food">
+            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food" onAction="#openAddScene">
                <graphic>
                   <ImageView fx:id="b2_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -76,7 +76,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" styleClass="navigation-item" text="Expired">
+            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" styleClass="navigation-item" text="Expired" onAction="#openExpiredFoodScene">
                <graphic>
                   <ImageView fx:id="b3_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
