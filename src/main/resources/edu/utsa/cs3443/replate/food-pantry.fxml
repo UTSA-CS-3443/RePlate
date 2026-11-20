@@ -32,20 +32,12 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.ListView?>
-<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.replate.PantryController">
+<HBox fx:id="main_container" prefHeight="480.0" prefWidth="790.0" stylesheets="@dashboard-javafx.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.replate.PantryController">
    <children>
       <VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="480.0" spacing="10.0" styleClass="sidebar" HBox.hgrow="SOMETIMES">
          <children>
@@ -57,7 +49,7 @@
                   <Insets />
                </VBox.margin>
             </ImageView>
-            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" styleClass="navigation-item" text="Dashboard" onAction="#openDashboardScene">
+            <Button fx:id="button_sidebar_dash" mnemonicParsing="false" onAction="#openDashboardScene" styleClass="navigation-item" text="Dashboard">
                <graphic>
                   <ImageView fx:id="b1_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -66,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" styleClass="navigation-item" text="Add Food" onAction="#openAddScene">
+            <Button fx:id="button_sidebar_add_food" mnemonicParsing="false" onAction="#openAddScene" styleClass="navigation-item" text="Add Food">
                <graphic>
                   <ImageView fx:id="b2_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -75,7 +67,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" styleClass="navigation-item" text="Expired" onAction="#openExpiredFoodScene">
+            <Button fx:id="button_sidebar_expired" mnemonicParsing="false" onAction="#openExpiredFoodScene" styleClass="navigation-item" text="Expired">
                <graphic>
                   <ImageView fx:id="b3_image" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -103,7 +95,7 @@
                         <Label fx:id="label_header_sub" styleClass="page-description" text="Description" />
                      </children>
                   </VBox>
-                  <Button fx:id="addFoodButton" alignment="CENTER" mnemonicParsing="false" styleClass="primary-button" text="Add Food" onAction="#openAddScene">
+                  <Button fx:id="addFoodButton" alignment="CENTER" mnemonicParsing="false" onAction="#openAddScene" styleClass="primary-button" text="Add Food">
                      <graphic>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -116,7 +108,7 @@
             </HBox>
             <HBox spacing="10.0">
                <children>
-                  <TextField fx:id="textField_searchbar" promptText="Search your pantry" styleClass="search-bar" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="searchBar" onAction="#onSearchClick" promptText="Search your pantry" styleClass="search-bar" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
             <HBox spacing="5.0">
@@ -132,29 +124,16 @@
             </HBox>
             <VBox prefHeight="200.0" prefWidth="100.0" styleClass="inventory-table" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox alignment="CENTER_LEFT"
-                        spacing="10"
-                        styleClass="table-header">
+                  <HBox alignment="CENTER_LEFT" spacing="10" styleClass="table-header">
 
                      <children>
-                        <Label prefWidth="230"
-                               minWidth="230"
-                               maxWidth="230"
-                               text="FOOD ITEM" />
+                        <Label maxWidth="230" minWidth="230" prefWidth="230" text="FOOD ITEM" />
 
-                        <Label prefWidth="180"
-                               minWidth="180"
-                               maxWidth="180"
-                               text="QUANTITY" />
+                        <Label maxWidth="180" minWidth="180" prefWidth="180" text="QUANTITY" />
 
-                        <Label prefWidth="130"
-                               minWidth="130"
-                               maxWidth="130"
-                               text="BEST BEFORE" />
+                        <Label maxWidth="130" minWidth="130" prefWidth="130" text="BEST BEFORE" />
 
-                        <Region prefWidth="75"
-                                minWidth="75"
-                                maxWidth="75" />
+                        <Region maxWidth="75" minWidth="75" prefWidth="75" />
                      </children>
 
                      <padding>
@@ -162,9 +141,7 @@
                      </padding>
 
                   </HBox>
-                  <ListView fx:id="pantryList"
-                            VBox.vgrow="ALWAYS"
-                            styleClass="pantry-list"/>
+                  <ListView fx:id="pantryList" styleClass="pantry-list" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
          </children>
