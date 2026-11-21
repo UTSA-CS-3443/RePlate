@@ -577,3 +577,49 @@
     -fx-font-weight: normal;
     -fx-text-fill: #20251F;
 }
+
+
+/* Expired food list rows */
+
+.expired-food-row {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e8e5df transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.expired-food-name {
+    -fx-font-size: 13px;
+    -fx-text-fill: #283328;
+}
+
+.expired-food-quantity {
+    -fx-font-size: 10px;
+    -fx-text-fill: #898d83;
+}
+
+.expired-food-status {
+    -fx-font-size: 9px;
+    -fx-text-fill: #96988f;
+}
+
+.expired-food-date {
+    -fx-font-size: 11px;
+    -fx-text-fill: #a54e40;
+}
+
+/* Expired food ListView */
+
+.expired-food-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.expired-food-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.expired-food-list .list-cell:filled:selected {
+    -fx-background-color: #f2f0e9;
+}

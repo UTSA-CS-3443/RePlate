@@ -19,7 +19,16 @@ public class Controller implements SceneAware {
         sceneManager.switchScene("food-pantry");
     }
     public void openExpiredFoodScene() {
+
         sceneManager.switchScene("expired-food");
+
+        ExpiredFoodController controller = (ExpiredFoodController)
+                sceneManager.getController("expired-food");
+
+        if (controller != null) {
+            controller.refreshExpiredFoods();
+        }
+
     }
 
     public void openEditScene(Food food) {

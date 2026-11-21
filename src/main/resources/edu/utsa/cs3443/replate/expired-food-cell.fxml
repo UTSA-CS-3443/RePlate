@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.image.ImageView?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="edu.utsa.cs3443.replate.ExpiredFoodCellController"
+      alignment="CENTER_LEFT"
+      spacing="12"
+      styleClass="expired-food-row">
+
+
+<children>
+
+        <CheckBox fx:id="selectCheckBox"/>
+
+        <ImageView fx:id="categoryIcon"
+                   fitHeight="32.0"
+                   fitWidth="32.0"
+                   preserveRatio="true"/>
+
+        <VBox spacing="2">
+            <Label fx:id="foodNameLabel"
+                   styleClass="expired-food-name"/>
+
+            <Label fx:id="quantityLabel"
+                   styleClass="expired-food-quantity"/>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <VBox alignment="CENTER_RIGHT" spacing="2">
+            <Label text="EXPIRED"
+                   styleClass="expired-food-status"/>
+
+            <Label fx:id="expirationLabel"
+                   styleClass="expired-food-date"/>
+        </VBox>
+
+    </children>
+
+    <padding>
+        <Insets top="10" bottom="10"
+                left="12" right="12"/>
+    </padding>
+
+</HBox>

@@ -29,23 +29,38 @@ public class SceneManager {
     }
 
     // Load and cache a scene
+
     public void addScene(String name, String fxmlPath) {
+
         try {
-            loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource(fxmlPath)
+            );
 
             Parent root = loader.load();
 
-            // Retrieve the FXML controller
             Object controller = loader.getController();
 
-            // Give controller access to SceneManager
             if (controller instanceof SceneAware aware) {
                 aware.setSceneManager(this);
             }
+
             scenes.put(name, new Scene(root));
             controllers.put(name, controller);
+
+            System.out.println("Loaded scene: " + name);
+
         } catch (Exception e) {
+
+            System.err.println(
+                    "Failed to load scene: " + name
+            );
+
             e.printStackTrace();
+
+            throw new RuntimeException(
+                    "Unable to load " + fxmlPath, e
+            );
         }
     }
 

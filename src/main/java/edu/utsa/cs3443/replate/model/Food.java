@@ -12,7 +12,6 @@ public class Food implements Conversion{
     private String notes;
     private String category;
     private String color;
-    private boolean isExpired = false;
 
     // Initialize food with set data
     public Food(String id, String name, double quantity, String unit, LocalDate addedDate, LocalDate expireDate, String notes, String category, String color) {
@@ -108,12 +107,12 @@ public class Food implements Conversion{
         this.category = category;
     }
 
-    public void setIsExpired(boolean isExpired) {
-        this.isExpired = true;
-    }
+    public boolean isExpired() {
+        if (expireDate == null) {
+            return false;
+        }
 
-    public boolean getIsExpired() {
-        return isExpired;
+        return expireDate.isBefore(LocalDate.now());
     }
 
     public double convertUnitToGram(double quantity, String unit) {

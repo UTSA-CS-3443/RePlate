@@ -149,6 +149,19 @@ public class PantryManager {
         return null;
     }
 
+    public ObservableList<Food> getExpiredFoods() {
+        ObservableList<Food> expiredFoods = FXCollections.observableArrayList();
+
+        for (Food food : foods) {
+
+            if (food.isExpired()) {
+                expiredFoods.add(food);
+            }
+        }
+
+        return expiredFoods;
+    }
+
     public ObservableList<Food> getFoodPantryList() {
         return foods;
     }
