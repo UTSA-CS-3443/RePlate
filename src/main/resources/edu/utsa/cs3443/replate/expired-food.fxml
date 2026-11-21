@@ -150,13 +150,13 @@
             </VBox>
             <HBox alignment="CENTER">
                <children>
-                  <CheckBox mnemonicParsing="false" text="Select all expired food">
+                  <CheckBox fx:id="selectAllCheckBox" mnemonicParsing="false" text="Select all expired food" onAction="#onSelectAllClick">
                      <font>
                         <Font name="Franklin Gothic Book" size="12.0" />
                      </font>
                   </CheckBox>
                   <Region HBox.hgrow="ALWAYS" />
-                  <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="delete-button" text="Remove expired food">
+                  <Button fx:id="button_add" alignment="CENTER" mnemonicParsing="false" styleClass="delete-button" text="Remove expired food" onAction="#onRemoveExpiredFood">
                      <graphic>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>

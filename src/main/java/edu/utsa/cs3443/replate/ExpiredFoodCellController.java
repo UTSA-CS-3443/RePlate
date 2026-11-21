@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.time.format.DateTimeFormatter;
+import java.util.function.BiConsumer;
 
 public class ExpiredFoodCellController {
 
@@ -19,6 +20,22 @@ public class ExpiredFoodCellController {
     @FXML private Label expirationLabel;
 
     private Food food;
+    private BiConsumer<Food, Boolean> selectionAction;
+
+    public void setSelectionAction(BiConsumer<Food, Boolean> selectionAction) {
+        this.selectionAction = selectionAction;
+    }
+
+    @FXML
+    private void initialize() {
+        selectCheckBox.setOnAction(event -> {
+            selectionAction.accept(food, selectCheckBox.isSelected());
+        });
+    }
+
+    public void setSelected(boolean selected) {
+        selectCheckBox.setSelected(selected);
+    }
 
     public void setFood(Food food) {
         this.food = food;
@@ -88,4 +105,6 @@ public class ExpiredFoodCellController {
 
          */
     }
+
+
 }
