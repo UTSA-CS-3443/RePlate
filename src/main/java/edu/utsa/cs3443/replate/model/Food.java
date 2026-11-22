@@ -115,6 +115,17 @@ public class Food implements Conversion{
         return expireDate.isBefore(LocalDate.now());
     }
 
+    public boolean isExpiringSoon() {
+        if (expireDate == null) {
+            return false;
+        }
+
+        LocalDate today = LocalDate.now();
+        LocalDate oneWeekFromNow = today.plusDays(7);
+
+        return !expireDate.isBefore(today) && !expireDate.isAfter(oneWeekFromNow);
+    }
+
     public double convertUnitToGram(double quantity, String unit) {
         if (unit.equalsIgnoreCase("ounce")) {
             return quantity * 28.35;
